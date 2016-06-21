@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+	<title>Let's increase</title>
+  <script src="https://fb.me/react-15.1.0.js"></script>
+<script src="https://fb.me/react-dom-15.1.0.js"></script>
+<script src="https://fb.me/react-with-addons-15.1.0.js"></script>
+<script src="https://fb.me/react-dom-15.1.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+</head>
+<body>
+ <div id="container">
+ 	
+ </div>
+ <script type="text/babel" >
+var Counter = React.createClass({
+	incrementCount: function(){
+		this.setState({
+			count: this.state.count + 1
+		});
+	},
+	getInitialState: function(){
+		return{
+			count: 0
+		}
+	},
+	render: function(){
+		return (
+			<div class="comp">
+				<p>Count: {this.state.count} </p>
+				<p><button type="button" onClick={this.incrementCount}>Increase</button></p>
+			</div>
+		)
+	}
+});
+ReactDOM.render(<Counter/>, document.getElementById('container'));
+</script>
+</body>
+</html>
